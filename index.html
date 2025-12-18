@@ -39,6 +39,19 @@
 <body>
 
 <style>
+  body {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+
+  .col {
+    text-align: left;
+    float: none;
+  }
+
   .heading {
     word-wrap: break-word;
     font-family: 'Oswald', sans-serif;
@@ -110,26 +123,25 @@
               </div>
               <div class="link-list">
                 <a href="https://scholar.google.com/citations?user=_v1EqjwAAAAJ&hl=en">Google Scholar</a> |
-                <a href="https://twitter.com/JadenQiGuo">Twitter</a> |
-		<a href="https://github.com/jaden-qi-guo">GitHub</a> |
-                <a href="https://www.linkedin.com/in/qi-guo-4593a6158/">LinkedIn</a>
+                <a href="https://x.com/JadenQiGuo">X</a> |
+		            <a href="https://github.com/jaden-qi-guo">GitHub</a> |
+                <a href="https://www.linkedin.com/in/qi-guo-4593a6158/">LinkedIn</a> |
+                <a href="https://bsky.app/profile/qiguo.bsky.social">BlueSky</a>
               </div>
             </div>
             <!-- Entries Column -->
-            <div class="col-md-8 col-xs-12">
+            <div class="col-md-9 col-xs-12">
                 <!-- About Me-->
                 <div class="col" style="margin-top:3%; text-align:left;">
 
                     <p><strong style="color:#032e80";>About me</strong>.
-                        I am a Ph.D student in computer science at <a href="https://www.mpi-inf.mpg.de/departments/inet">INET group</a>, <a href="https://www.mpi-inf.mpg.de/home/">Max Planck Institute for Informatics</a>.
+                        I am a Ph.D student in computer science at <a href="https://www.mpi-inf.mpg.de/home/">Max Planck Institute for Informatics</a>, advised by <a href="https://www.mpi-inf.mpg.de/departments/inet/people/anja-feldmann"> Prof. Anja Feldmann</a> and <a href="https://balakrishnanc.github.io/"> Prof. Balakrishnan Chandrasekaran</a>.
 
                     <p><strong style="color:#032e80";>Research Interests</strong>.
-                        I am broadly interested in <strong>systems</strong> and <strong>networks</strong>. Currently, I am working on <em>video streaming</em> with <a href="https://www.mpi-inf.mpg.de/departments/inet/people/anja-feldmann"> Prof. Anja Feldmann</a> and <a href="https://balakrishnanc.github.io/"> Prof. Balakrishnan Chandrasekaran</a>. 
-                        I also work with <a href="https://binds.ch/">Prof. Laurent Bindshaedler</a> on <em> blockchain analytics systems</em>.
-
+                        I am broadly interested in <strong>systems</strong> and <strong>networking</strong>. Currently, my research focuses on cost-efficient video streaming and partially reliable transport.
 
                     <p><strong style="color:#032e80";>Prior to MPI</strong>. 
-                        I got my B.S. in the joint program between <a href="https://www.qmul.ac.uk/"> Queen Mary University of London</a> and <a href="https://www.bupt.edu.cn/">Beijing University of Posts and Telecommunications</a> in 2020.
+                        I got my B.S. degree in the joint program between <a href="https://www.qmul.ac.uk/"> Queen Mary University of London</a> and <a href="https://www.bupt.edu.cn/">Beijing University of Posts and Telecommunications</a> in 2020.
                     </p>
 
                     </p>
@@ -165,7 +177,7 @@
                     -->
 
 
-                    <h4 id="conference-papers">Conference Papers</h4>
+                    <h3 id="conference-papers">Conference Papers</h3>
                     <ul class="vert">
                         <li>
                           <strong><a href="https://dl.acm.org/doi/10.1145/3642968.3654814">AlterEgo: A Dedicated Blockchain Node For Analytics</a></strong>. <br>
@@ -200,7 +212,7 @@
                         </li>
                     </ul>
 
-                    <h4 id="journal-papers">Journal Papers</h4>
+                    <h3 id="journal-papers">Journal Papers</h3>
                     <ul class="vert">
                     <li>
                         <strong><a href="https://www.mdpi.com/1424-8220/20/7/1949/pdf">Predicting spatial visualization problems' difficulty level from eye-tracking data</a></strong>. <br>
@@ -215,12 +227,20 @@
 
                 <!-- Teaching-->
                 <div class="col">
-                    <h2 id="teaching">Teaching</h2>
-                    <h4> Saarland University (as teaching assistant):</h4>
+                    <h2 id="teaching">Teaching and Supervision</h2>
+                    <h3> Saarland University:</h3>
                     <ul>
-                        <li> <a> Hot Topics in Data Networks</a> (2023-24 Winter)</li>
-                        <li> <a href="https://cms.sic.saarland/ds_ss_23/">Distributed Systems</a> (2022-23 Summer)</li>
-                        <li> <a href="https://inet-teaching.mpi-inf.mpg.de/dn_23/">Data Networks</a> (2022-23 Summer)</li>
+                        <li> <a> Hot Topics in Data Networks</a> (2023-24 Winter as teaching assistant, 2024-25 Winter as tutor)</li>
+                        <li> <a href="https://cms.sic.saarland/ds_ss_23/">Distributed Systems</a> (2022-23 Summer as teaching assistant)</li>
+                        <li> <a href="https://inet-teaching.mpi-inf.mpg.de/dn_23/">Data Networks</a> (2022-23 Summer as tutor)</li>
+                    </ul>
+
+                    <h3> Thesis Supervision</h3>
+                    <ul>
+                        <li> <strong>Master Thesis</strong>, Topic: Layered Video Streaming, Jaideep More, Saarland University (2025), co-advised with <a href="https://www.mpi-inf.mpg.de/departments/inet/people/taha-albakour"> Dr. Taha Albakour </a> and <a href="https://www.mpi-inf.mpg.de/tiago-heinrich"> Dr. Tiago Heinrich </a>.</li>
+                        <li> <strong>Bachelor Thesis</strong>, Topic: Video Streaming ABR Evaluation in Mobile Network, Erin Elagöz, Vrije Universiteit Amsterdam (2025), co-advised with <a href="https://balakrishnanc.github.io/"> Prof. Balakrishnan Chandrasekaran</a>.</li>
+                        <li> <strong>Master Thesis</strong>, Topic: Partially Reliable Transport with QUIC Datagram, Punit Lodha, Saarland University (2024-25), co-advised with <a href="https://balakrishnanc.github.io/"> Prof. Balakrishnan Chandrasekaran</a>.</li>
+                        <li> <strong>Master Thesis</strong>, Topic: Web Browsing with Partially Reliable Transport, Aditya N. Srivastava, Vrije Universiteit Amsterdam (2024), co-advised with <a href="https://balakrishnanc.github.io/"> Prof. Balakrishnan Chandrasekaran</a>.</li>
                     </ul>
 
                 </div>
@@ -229,16 +249,22 @@
                 <!-- Experiences-->
                <div class="col">
                     <h2 id="experiences"> Experiences</h2>
-                    <h4>Education:</h4>
+                    <h3>Education:</h3>
                     <ul>
-                        <li>Ph.D. in Computer Science, <a href="https://www.mpi-inf.mpg.de/home/">Max Planck Institute for Informatics</a> and <a href="https://www.uni-saarland.de/en/home.html">Saarland University</a> (Sep 2022 - Present)</li>
-                        <li>B.S. in Telecommunication Engineering, <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a> and <a href="https://www.bupt.edu.cn/"> Beijing University of Posts and Telecommunications</a> (Sep 2016 - July 2020)</li>
+                        <li><strong>Ph.D. in Computer Science</strong>, <a href="https://www.mpi-inf.mpg.de/home/">Max Planck Institute for Informatics</a> and <a href="https://www.uni-saarland.de/en/home.html">Saarland University</a> (Sep 2022 - Present)</li>
+                        <li><strong>B.S. in Telecommunication Engineering</strong>, <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a> and <a href="https://www.bupt.edu.cn/"> Beijing University of Posts and Telecommunications</a> (Sep 2016 - July 2020)</li>
                     </ul>
 
-                    <h4>Industrial:</h4>
+                     <h3>Academic:</h3>
                     <ul>
-                        <li>Softeware Develpment Engineering Intern, Amazon, Beijing, China (October 2020- July 2021)</li>
-                        <li>Softeware Develpment Engineering Intern in Test, DiDi, Beijing, China (October 2019 - May 2020)</li>
+                        <li><strong>NSDI '26</strong> Artifacts Evaluation Committee</li>
+                    </ul>
+
+                    <h3>Industrial:</h3>
+                    <ul>
+                        <li><strong>PhD Intern</strong>, <strong>Bell Labs</strong>, Stuttgart, Germany (September 2025- December 2025)</li>
+                        <li><strong>Software Development Engineering Intern</strong>, <strong>Amazon</strong>, Beijing, China (October 2020- July 2021)</li>
+                        <li><strong>Software Development Engineering Intern</strong>, <strong>DiDi</strong>, Beijing, China (October 2019 - May 2020)</li>
                     </ul>
 
                 </div>
