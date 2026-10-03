@@ -73,7 +73,7 @@ function headerCard() {
     <h1>${p.name} <span class="local">${p.nameLocal}</span></h1>
     ${p.titles.map(t => `<div class="title">${t}</div>`).join('')}
     <div class="aff">${p.affiliation.map(a => `<a href="${a.href}">${a.text}</a>`).join('<span class="sep">·</span>')}</div>
-    <div class="contact"><span><i class="fa-solid fa-envelope"></i><a href="mailto:${p.email}">${p.email}</a></span><span><i class="fa-solid fa-location-dot"></i>${p.location}</span></div>
+    <div class="contact"><span><i class="fa-regular fa-envelope"></i><a href="mailto:${p.email}">${p.email}</a></span><span><i class="fa-solid fa-location-dot"></i>${p.location}</span></div>
     <div class="social">${p.links.map(l => `<a class="s-${l.label.toLowerCase().replace(/\W+/g, '')}" href="${l.href}"><i class="${l.icon}"></i>${l.label}</a>`).join('')}</div>
   </div>
 </section>`;
@@ -94,20 +94,19 @@ const venueLine = w => /\(([^()]+)\)/.test(w) ? w.replace(/\(([^()]+)\)/, '(<str
 function pub(p) {
   const color = p.color || PUB_COLORS[C.publications.indexOf(p) % PUB_COLORS.length];
   const authors = p.authors.map(a => a === C.profile.name ? `<span class="me">${a}</span>` : a).join(', ');
-  const btn = (href, icon, label) => href ? `<a class="btn" href="${href}"><i class="${icon}"></i>${label}</a>` : '';
-  const buttons = [btn(p.href, 'fa-regular fa-file-lines', 'Paper'), btn(p.code, 'fa-solid fa-code', 'Code'), btn(p.slides, 'fa-solid fa-person-chalkboard', 'Slides'),
-    btn(p.video, 'fa-regular fa-circle-play', 'Video'), btn(p.website, 'fa-solid fa-globe', 'Website')].join('');
-  const type = p.kind === 'journal' ? 'journal' : /workshop/i.test(p.where) ? 'workshop' : 'conference';
-  const visual = p.thumb ? `<a class="thumb-link zoom" href="${IMG}${p.thumb}" title="Figure from the paper (click to enlarge)"><img class="thumb" src="${IMG}${p.thumb}" alt="A figure from ${esc(p.title)}" loading="lazy"></a>`
-    : p.short ? `<${p.href ? `a href="${p.href}"` : 'span'} class="tile t-${type}" aria-hidden="true" tabindex="-1"><i class="${p.icon}"></i><span>${p.short}</span></${p.href ? 'a' : 'span'}>` : '';   // no link yet: a plain tile
+  const link = (href, icon, label) => href ? `<a href="${href}"><i class="${icon}"></i>${label}</a>` : '';
+  const links = [link(p.href, 'fa-regular fa-newspaper', 'Paper'), link(p.code, 'fa-solid fa-laptop-code', 'Code'), link(p.slides, 'fa-solid fa-person-chalkboard', 'Slides'),
+    link(p.video, 'fa-solid fa-video', 'Video'), link(p.website, 'fa-solid fa-link', 'Project page')].filter(Boolean);
+  const tag = `<span class="vtag">${p.venue}</span>`;   // the venue on the figure's corner
+  const visual = p.thumb ? `<a class="fig zoom" href="${IMG}${p.thumb}" title="Figure from the paper (click to enlarge)">${tag}<img src="${IMG}${p.thumb}" alt="A figure from ${esc(p.title)}" loading="lazy"></a>`
+    : `<span class="fig fig-empty">${tag}<i class="${p.icon || 'fa-regular fa-newspaper'}" aria-hidden="true"></i></span>`;
   return `<article class="pub" style="--pc: var(--${color}); --pc-soft: var(--${color}-soft)">
   ${visual}
   <div class="pub-body">
-    <div class="chips"><span class="chip venue">${p.venue}</span>${p.award ? `<span class="chip award"><i class="fa-solid fa-trophy"></i>${p.award}</span>` : ''}</div>
     <h3>${p.href ? `<a href="${p.href}">${esc(p.title)}</a>` : esc(p.title)}</h3>
     <div class="authors">${authors}</div>
-    <div class="where">${venueLine(p.where)}</div>
-    <div class="buttons">${buttons}</div>
+    <div class="where">${venueLine(p.where)}${p.award ? ` <span class="award"><i class="fa-solid fa-trophy"></i>${p.award}</span>` : ''}</div>
+    ${links.length ? `<div class="links">${links.join('')}</div>` : ''}
     ${p.summary ? `<details class="summary"><summary>Read summary</summary><p>${p.summary}</p></details>` : ''}
   </div>
 </article>`;
@@ -116,7 +115,7 @@ function pub(p) {
 // ---------- pages ----------
 const home = [
   headerCard(),
-  section('about', 'fa-solid fa-address-card', 'blue', 'About me', C.about.map(p => `<p>${p}</p>` + (/:\s*$/.test(p) ?
+  section('about', 'fa-regular fa-user', 'blue', 'About me', C.about.map(p => `<p>${p}</p>` + (/:\s*$/.test(p) ?
     `<div class="focus">${C.focus.map(f => `<div class="focus-tile b-${f.color}"><i class="${f.icon}"></i><span>${f.text}</span></div>`).join('')}</div>` : '')).join('\n')),
   section('news', 'fa-solid fa-bullhorn', 'orange', 'Recent news', newsList()),
   section('selected', 'fa-solid fa-lightbulb', 'green', 'Selected publications',
@@ -141,7 +140,7 @@ const teachingPage = [
 const experiencePage = [
   `<h1 class="page-title">Experience</h1>`,
   section('education', 'fa-solid fa-graduation-cap', 'blue', 'Education',
-    `<ul class="rows">${C.education.map(e => `<li><span class="row-main"><strong>${e.degree}</strong><span class="when">${e.when}</span></span><span class="row-note">${e.html}</span>${(e.honors || []).map(h => `<span class="row-note honors"><i class="fa-solid fa-award"></i>${h}</span>`).join('')}</li>`).join('')}</ul>`),
+    `<ul class="rows">${C.education.map(e => `<li><span class="row-main"><strong>${e.degree}</strong><span class="when">${e.when}</span></span><span class="row-note">${e.html}</span>${(e.honors || []).map(h => `<span class="row-note honors"><i class="fa-solid fa-medal"></i>${h}</span>`).join('')}</li>`).join('')}</ul>`),
   section('industry', 'fa-solid fa-briefcase', 'orange', 'Industry',
     `<ul class="rows">${C.industry.map(e => `<li><span class="row-main"><strong>${e.role}</strong>, ${e.org}<span class="when">${e.when}</span></span><span class="row-note">${e.where}</span></li>`).join('')}</ul>`),
   section('service', 'fa-solid fa-hands-helping', 'green', 'Academic service',

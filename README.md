@@ -66,9 +66,9 @@ The first `newsShown` items (4) are shown; the rest go under "Older news".
 
 - `kind` is `conference` (workshops count here) or `journal`. Add `selected: true` to also show it under "Selected publications" on the home page.
 - Picture: a figure from the paper, saved in `images/` (about 1000–1200 px wide; the current ones are `pub-*.png`), set with
-  `thumb: 'pub-name.png'`. It shows in a small frame; a click opens it full size. Without `thumb`, `short` and `icon` draw
-  a placeholder tile.
-- Colour: each paper gets one from the palette in list order (venue chip and the figure's left edge); `color: 'pink'` picks one
+  `thumb: 'pub-name.png'`. It shows in a small frame left of the entry, with the venue on its corner; a click opens it full size. Without `thumb`, the frame
+  shows `icon`.
+- Colour: each paper gets one from the palette in list order (the venue label on the figure's corner and the figure's frame); `color: 'pink'` picks one
   (blue, orange, green, purple, pink, gold).
 - Optional links and extras: `code`, `slides`, `video`, `website`, `summary` (expandable text), `award`.
 - Icons are Font Awesome 6 names (fontawesome.com/icons, free set), written like `fa-solid fa-film`.

@@ -125,7 +125,7 @@ export const trencadis = {
   image: 'trencadis-player.jpg',
   caption: 'The player during playback, with live statistics.',
   links: [
-    { text: 'Watch a video', href: 'https://trencadis.dev/demo/watch.html', icon: 'fa-solid fa-circle-play' },
+    { text: 'Watch a video', href: 'https://trencadis.dev/demo/watch.html', icon: 'fa-solid fa-play' },
     { text: 'Results', href: 'https://trencadis.dev/demo/results.html', icon: 'fa-solid fa-chart-simple' },
     { text: 'FAQ', href: 'https://trencadis.dev/demo/faq.html', icon: 'fa-solid fa-circle-question' },
   ],
