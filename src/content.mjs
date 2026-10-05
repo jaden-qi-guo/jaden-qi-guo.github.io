@@ -37,6 +37,7 @@ export const focus = [
 ];
 
 export const news = [
+  { date: 'Oct 2026', html: `<strong>Spectra</strong> is accepted to the <a href="https://conferences2.sigcomm.org/co-next/2026/">CoNEXT 2026 Student Workshop</a>! Spectra is our work exploring practical layered video streaming. Congrats to the team!` },
   { date: 'Sep 2026', html: `<strong>JANUS</strong> is accepted to <a href="https://sigops.org/s/conferences/atc/2026/index.html">ATC 2026</a>! JANUS is work from my internship at Bell Labs. Congrats to the team!` },
   { date: 'Oct 2025', html: `I started a research internship at <a href="https://www.bell-labs.com/">Nokia Bell Labs</a> in Stuttgart, working on remote attestation over TLS for confidential cloud services.` },
   { date: 'Mar 2024', html: `<strong>AlterEgo</strong> is accepted to <a href="https://edge-sys.github.io/2024/">EdgeSys 2024</a>! AlterEgo is work from my Ph.D. research immersion lab at MPI. Congrats to the team!` },
@@ -52,6 +53,9 @@ export const newsShown = 4;   // the rest go under "Older news"
 // color: the paper's colour (blue, orange, green, purple, pink, gold); by default they take turns in list order.
 // short + icon draw the picture tile until a real figure is set in thumb. Optional: code, slides, video, website, summary, award, thumb (image in images/).
 export const publications = [
+  { short: 'Spectra', thumb: 'pub-spectra.png', icon: 'fa-solid fa-layer-group', kind: 'conference', venue: "CoNEXT-SW '26", title: 'Towards Practical Layered Video Streaming with QoE-Aware Partial Delivery',   // href: the published version, once out
+    authors: ['Qi Guo', 'Jaideep More', 'Taha Albakour', 'Balakrishnan Chandrasekaran', 'Tiago Heinrich'],
+    where: 'CoNEXT Student Workshop (CoNEXT-SW), co-located with ACM CoNEXT, 2026' },
   { short: 'JANUS', thumb: 'pub-janus.png', selected: true, icon: 'fa-solid fa-scale-balanced', kind: 'conference', venue: "ATC '26", title: 'JANUS: Practical Load Balancing for Confidential Cloud Services',   // href: the published version, once out
     authors: ['Qi Guo', 'Alice Dethise', 'Ruichuan Chen', 'Istemi Ekin Akkus', 'Ivica Rimac', 'Lieven Trappeniers'],
     where: 'ACM SIGOPS Annual Technical Conference (ATC), 2026' },
