@@ -78,7 +78,7 @@ The first `newsShown` items (4) are shown; the rest go under "Older news".
 `supervision`, `education`, `industry`, `service`) and change the fields. An education entry can list honours, one line each:
 `honors: ['First-Class Honours', 'Ye Peida Elite Class']`.
 
-**Highlighting.** Names of papers and projects in text: `<strong>JANUS</strong>`. Keep it sparing.
+**Highlighting.** Names of papers and projects in text: `<strong>Janus</strong>`. Keep it sparing.
 
 **Research focus** (the boxes with coloured icons on the home page): `focus`, with `color` one of blue, orange, green, purple, pink.
 

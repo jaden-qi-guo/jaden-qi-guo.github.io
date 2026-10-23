@@ -26,7 +26,7 @@ export const about = [
   `I am a Ph.D. student in computer science at <a href="https://www.mpi-inf.mpg.de/home/">Max Planck Institute for Informatics</a>, advised by <a href="https://www.mpi-inf.mpg.de/departments/inet/people/anja-feldmann">Prof. Anja Feldmann</a> and <a href="https://balakrishnanc.github.io/">Prof. Balakrishnan Chandrasekaran</a>.`,
   `I am broadly interested in systems and networking. Currently, my research focuses on:`,
   `At MPI, I was also fortunate to work with <a href="https://binds.ch/">Prof. Laurent Bindschaedler</a> on blockchain analytics systems (<strong>AlterEgo</strong>) during my research immersion lab.`,
-  `During my Ph.D., I was a research intern at <a href="https://www.bell-labs.com/">Nokia Bell Labs</a>, where I worked on <strong>JANUS</strong>, a practical load-balancing architecture for confidential cloud services built on trusted execution environments (TEEs).`,
+  `During my Ph.D., I was a research intern at <a href="https://www.bell-labs.com/">Nokia Bell Labs</a>, where I worked on <strong>Janus</strong>, a practical load-balancing architecture for confidential cloud services built on trusted execution environments (TEEs).`,
   `Prior to MPI, I got my B.S. degree in the joint program between <a href="https://www.qmul.ac.uk/">Queen Mary University of London</a> and <a href="https://www.bupt.edu.cn/">Beijing University of Posts and Telecommunications</a> in 2020.`,
 ];
 
@@ -38,7 +38,7 @@ export const focus = [
 
 export const news = [
   { date: 'Oct 2026', html: `<strong>Spectra</strong> is accepted to the <a href="https://conferences2.sigcomm.org/co-next/2026/">CoNEXT 2026 Student Workshop</a>! Spectra is our work exploring practical layered video streaming. Congrats to the team!` },
-  { date: 'Sep 2026', html: `<strong>JANUS</strong> is accepted to <a href="https://sigops.org/s/conferences/atc/2026/index.html">ATC 2026</a>! JANUS is work from my internship at Bell Labs. Congrats to the team!` },
+  { date: 'Sep 2026', html: `<strong>Janus</strong> is accepted to <a href="https://sigops.org/s/conferences/atc/2026/index.html">ATC 2026</a>! Janus is work from my internship at Bell Labs. Congrats to the team!` },
   { date: 'Oct 2025', html: `I started a research internship at <a href="https://www.bell-labs.com/">Nokia Bell Labs</a> in Stuttgart, working on remote attestation over TLS for confidential cloud services.` },
   { date: 'Mar 2024', html: `<strong>AlterEgo</strong> is accepted to <a href="https://edge-sys.github.io/2024/">EdgeSys 2024</a>! AlterEgo is work from my Ph.D. research immersion lab at MPI. Congrats to the team!` },
   { date: 'Sep 2023', html: `I will be a teaching assistant for the seminar Hot Topics in Data Networks next semester.` },
@@ -51,14 +51,16 @@ export const newsShown = 4;   // the rest go under "Older news"
 
 // kind: conference | journal. selected: true also lists it under "Selected publications" on the home page.
 // color: the paper's colour (blue, orange, green, purple, pink, gold); by default they take turns in list order.
-// short + icon draw the picture tile until a real figure is set in thumb. Optional: code, slides, video, website, summary, award, thumb (image in images/).
+// short + icon draw the picture tile until a real figure is set in thumb. Optional: code, slides, video, website, summary, award, thumb (image in images/),
+// badges: artifact evaluation badges (ACM names; any of 'available', 'functional', 'reproduced') with badgesHref, the venue's badge page.
 export const publications = [
   { short: 'Spectra', thumb: 'pub-spectra.png', icon: 'fa-solid fa-layer-group', kind: 'conference', venue: "CoNEXT-SW '26", title: 'Towards Practical Layered Video Streaming with QoE-Aware Partial Delivery',   // href: the published version, once out
     authors: ['Qi Guo', 'Jaideep More', 'Taha Albakour', 'Balakrishnan Chandrasekaran', 'Tiago Heinrich'],
     where: 'CoNEXT Student Workshop (CoNEXT-SW), co-located with ACM CoNEXT, 2026' },
-  { short: 'JANUS', thumb: 'pub-janus.png', selected: true, icon: 'fa-solid fa-scale-balanced', kind: 'conference', venue: "ATC '26", title: 'JANUS: Practical Load Balancing for Confidential Cloud Services',   // href: the published version, once out
+  { short: 'Janus', thumb: 'pub-janus.png', selected: true, icon: 'fa-solid fa-scale-balanced', kind: 'conference', venue: "ATC '26", title: 'Janus: Practical Load Balancing for Confidential Cloud Services',   // href: the published version, once out
     authors: ['Qi Guo', 'Alice Dethise', 'Ruichuan Chen', 'Istemi Ekin Akkus', 'Ivica Rimac', 'Lieven Trappeniers'],
-    where: 'ACM SIGOPS Annual Technical Conference (ATC), 2026' },
+    where: 'ACM SIGOPS Annual Technical Conference (ATC), 2026',
+    badges: ['available', 'functional', 'reproduced'], badgesHref: 'https://sysartifacts.github.io/atc2026/badges' },
   { short: 'AlterEgo', thumb: 'pub-alterego.png', selected: true, icon: 'fa-solid fa-cubes', kind: 'conference', venue: "EdgeSys '24", title: 'AlterEgo: A Dedicated Blockchain Node For Analytics', href: 'https://dl.acm.org/doi/10.1145/3642968.3654814',
     authors: ['Qi Guo', 'Mahdi Alizadeh', 'Ali Falahati', 'Laurent Bindschaedler'],
     where: 'International Workshop on Edge Systems, Analytics and Networking (EdgeSys), co-located with EuroSys, 2024' },
@@ -105,6 +107,9 @@ export const industry = [
   { role: 'PhD Intern', org: 'Nokia Bell Labs', where: 'Stuttgart, Germany', when: 'Oct 2025 – Dec 2025' },
   { role: 'Software Development Engineering Intern', org: 'Amazon', where: 'Beijing, China', when: 'Oct 2020 – Jul 2021' },
   { role: 'Software Development Engineering Intern', org: 'DiDi', where: 'Beijing, China', when: 'Oct 2019 – May 2020' },
+];
+export const awards = [
+  { name: 'Student Travel Grant', venue: "ATC '26", href: 'https://sigops.org/s/conferences/atc/2026/grant.html' },
 ];
 export const service = [
   { role: 'Shadow Technical Program Committee', venue: "CoNEXT '26" },

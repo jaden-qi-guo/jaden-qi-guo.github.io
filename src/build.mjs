@@ -89,6 +89,9 @@ function newsList() {
 // each paper's colour (venue chip and figure frame): p.color, or the palette in list order, so neighbours differ and a
 // paper looks the same on every page
 const PUB_COLORS = ['blue', 'orange', 'green', 'purple', 'pink', 'gold'];
+// artifact evaluation badges: ACM's badge images (v1.1, as on the venue's artifact site), in images/acm-<name>.png
+const BADGES = { available: 'Artifacts Available', functional: 'Artifacts Evaluated: Functional', reproduced: 'Results Reproduced' };
+const badgeRow = p => p.badges?.length ? `<div class="art-badges">${p.badges.map(b => `<a href="${p.badgesHref || '#'}" title="ACM badge: ${BADGES[b]}"><img src="${IMG}acm-${b}.png" alt="ACM badge: ${BADGES[b]}" width="50" height="50"></a>`).join('')}</div>` : '';
 // the venue's short name in bold: "(ATC)" in "… Conference (ATC), 2026", else the name before the first comma
 const venueLine = w => /\(([^()]+)\)/.test(w) ? w.replace(/\(([^()]+)\)/, '(<strong>$1</strong>)') : w.replace(/^([^,]+)/, '<strong>$1</strong>');
 function pub(p) {
@@ -106,6 +109,7 @@ function pub(p) {
     <h3>${p.href ? `<a href="${p.href}">${esc(p.title)}</a>` : esc(p.title)}</h3>
     <div class="authors">${authors}</div>
     <div class="where">${venueLine(p.where)}${p.award ? ` <span class="award"><i class="fa-solid fa-trophy"></i>${p.award}</span>` : ''}</div>
+    ${badgeRow(p)}
     ${links.length ? `<div class="links">${links.join('')}</div>` : ''}
     ${p.summary ? `<details class="summary"><summary>Read summary</summary><p>${p.summary}</p></details>` : ''}
   </div>
@@ -143,6 +147,8 @@ const experiencePage = [
     `<ul class="rows">${C.education.map(e => `<li><span class="row-main"><strong>${e.degree}</strong><span class="when">${e.when}</span></span><span class="row-note">${e.html}</span>${(e.honors || []).map(h => `<span class="row-note honors"><i class="fa-solid fa-medal"></i>${h}</span>`).join('')}</li>`).join('')}</ul>`),
   section('industry', 'fa-solid fa-briefcase', 'orange', 'Industry',
     `<ul class="rows">${C.industry.map(e => `<li><span class="row-main"><strong>${e.role}</strong>, ${e.org}<span class="when">${e.when}</span></span><span class="row-note">${e.where}</span></li>`).join('')}</ul>`),
+  section('awards', 'fa-solid fa-trophy', 'gold', 'Awards',
+    `<ul class="rows">${C.awards.map(a => `<li><span class="row-main"><span class="tag">${a.venue}</span>${a.href ? `<a href="${a.href}">${a.name}</a>` : a.name}</span></li>`).join('')}</ul>`),
   section('service', 'fa-solid fa-hands-helping', 'green', 'Academic service',
     `<ul class="rows">${C.service.map(s => `<li><span class="row-main"><span class="tag">${s.venue}</span>${s.role}</span></li>`).join('')}</ul>`),
 ].join('\n');
