@@ -109,7 +109,7 @@ export const industry = [
   { role: 'Software Development Engineering Intern', org: 'DiDi', where: 'Beijing, China', when: 'Oct 2019 – May 2020' },
 ];
 export const awards = [
-  { name: 'Student Travel Grant', venue: "ATC '26", href: 'https://sigops.org/s/conferences/atc/2026/grant.html' },
+  { name: 'Travel Grant', venue: "ATC '26" },
 ];
 export const service = [
   { role: 'Shadow Technical Program Committee', venue: "CoNEXT '26" },
