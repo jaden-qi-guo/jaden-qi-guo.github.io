@@ -60,6 +60,7 @@ export const publications = [
   { short: 'Janus', thumb: 'pub-janus.png', selected: true, icon: 'fa-solid fa-scale-balanced', kind: 'conference', venue: "ATC '26", title: 'Janus: Practical Load Balancing for Confidential Cloud Services',   // href: the published version, once out
     authors: ['Qi Guo', 'Alice Dethise', 'Ruichuan Chen', 'Istemi Ekin Akkus', 'Ivica Rimac', 'Lieven Trappeniers'],
     where: 'ACM SIGOPS Annual Technical Conference (ATC), 2026',
+    code: 'https://github.com/Nokia-Bell-Labs/load-balancing-for-confidential-cloud-services',
     badges: ['available', 'functional', 'reproduced'], badgesHref: 'https://sysartifacts.github.io/atc2026/badges' },
   { short: 'AlterEgo', thumb: 'pub-alterego.png', selected: true, icon: 'fa-solid fa-cubes', kind: 'conference', venue: "EdgeSys '24", title: 'AlterEgo: A Dedicated Blockchain Node For Analytics', href: 'https://dl.acm.org/doi/10.1145/3642968.3654814',
     authors: ['Qi Guo', 'Mahdi Alizadeh', 'Ali Falahati', 'Laurent Bindschaedler'],
