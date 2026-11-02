@@ -1,4 +1,4 @@
-// build.mjs: renders the site from content.mjs into dist/, with a copy of images/. No dependencies.
+// build.mjs: renders the site from content.mjs into dist/, with copies of images/ and files/ and a robots.txt. No dependencies.
 //   node src/build.mjs
 import { copyFileSync, cpSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -9,6 +9,7 @@ const HERE = dirname(fileURLToPath(import.meta.url)), REPO = join(HERE, '..'), O
 const IMG = 'images/';
 mkdirSync(join(OUT, 'assets'), { recursive: true });
 cpSync(join(REPO, 'images'), join(OUT, 'images'), { recursive: true });
+cpSync(join(REPO, 'files'), join(OUT, 'files'), { recursive: true, filter: f => !f.endsWith('.DS_Store') });
 copyFileSync(join(HERE, 'style.css'), join(OUT, 'assets', 'style.css'));
 copyFileSync(join(HERE, 'site.js'), join(OUT, 'assets', 'site.js'));
 
@@ -167,4 +168,5 @@ const bodies = { 'index.html': home, 'publications.html': pubs, 'teaching.html':
 const all = [...PAGES, ...MORE.map(m => [m.file, m.title])];
 for (const [file, title] of all) writeFileSync(join(OUT, file), page(file, title, bodies[file]));
 writeFileSync(join(OUT, '.nojekyll'), '');
+writeFileSync(join(OUT, 'robots.txt'), ['User-agent: *', ...C.noCrawl.map(f => `Disallow: /${f}`), ''].join('\n'));
 console.log(`built ${all.length} pages into ${OUT}`);

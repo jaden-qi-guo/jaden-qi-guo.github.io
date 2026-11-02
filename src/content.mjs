@@ -53,11 +53,16 @@ export const newsShown = 4;   // the rest go under "Older news"
 // color: the paper's colour (blue, orange, green, purple, pink, gold); by default they take turns in list order.
 // short + icon draw the picture tile until a real figure is set in thumb. Optional: code, slides, video, website, summary, award, thumb (image in images/),
 // badges: artifact evaluation badges (ACM names; any of 'available', 'functional', 'reproduced') with badgesHref, the venue's badge page.
+// Files that search engines (and so Google Scholar) must not crawl, written into robots.txt: copies of papers whose
+// publisher's version should be the one indexed.
+export const noCrawl = ['files/janus-atc26.pdf'];
+
 export const publications = [
   { short: 'Spectra', thumb: 'pub-spectra.png', icon: 'fa-solid fa-layer-group', kind: 'conference', venue: "CoNEXT-SW '26", title: 'Towards Practical Layered Video Streaming with QoE-Aware Partial Delivery',   // href: the published version, once out
     authors: ['Qi Guo', 'Jaideep More', 'Taha Albakour', 'Balakrishnan Chandrasekaran', 'Tiago Heinrich'],
     where: 'CoNEXT Student Workshop (CoNEXT-SW), co-located with ACM CoNEXT, 2026' },
-  { short: 'Janus', thumb: 'pub-janus.png', selected: true, icon: 'fa-solid fa-scale-balanced', kind: 'conference', venue: "ATC '26", title: 'Janus: Practical Load Balancing for Confidential Cloud Services',   // href: the published version, once out
+  { short: 'Janus', thumb: 'pub-janus.png', selected: true, icon: 'fa-solid fa-scale-balanced', kind: 'conference', venue: "ATC '26", title: 'Janus: Practical Load Balancing for Confidential Cloud Services',
+    href: 'files/janus-atc26.pdf',   // our copy, kept out of search engines (noCrawl); switch to https://doi.org/10.1145/3828523.3857052 once the ACM DL has it
     authors: ['Qi Guo', 'Alice Dethise', 'Ruichuan Chen', 'Istemi Ekin Akkus', 'Ivica Rimac', 'Lieven Trappeniers'],
     where: 'ACM SIGOPS Annual Technical Conference (ATC), 2026',
     code: 'https://github.com/Nokia-Bell-Labs/load-balancing-for-confidential-cloud-services',

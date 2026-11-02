@@ -10,7 +10,7 @@ The site is built from `src/` into `dist/` by a small script with no dependencie
 | `src/style.css`, `src/site.js` | Styles and the small menu script. |
 | `src/dev.mjs` | The live preview server (local only; not part of the published site). |
 | `images/` | Pictures (profile photo, paper figures, screenshots). Copied into the site as is. |
-| `files/` | PDFs and other files to link to. |
+| `files/` | PDFs and other files to link to (copied into the site). To keep one out of search engines and Google Scholar, add it to `noCrawl` in `src/content.mjs` (written into robots.txt). |
 | `dist/` | The built site. Generated; not in git. |
 
 ## Preview
